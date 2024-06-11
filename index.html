@@ -7,29 +7,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="dashboard">
+    <div id="main-title">
         <h1>Rubber Duck Dashboard</h1>
-        <ul id="duckList"></ul>
+    </div>
+    <div class="info-box" id="dashboard">
+        <h2>Duck Counts</h2>
+        <ul id="duckList">
+            <li>🐥 Regular Ducks: 70 <div class="progress"><div class="progress-bar" style="width:70%;"></div></div></li>
+            <li>🐥 Small Ducks: 10 <div class="progress"><div class="progress-bar" style="width:10%;"></div></div></li>
+            <li>🐥 Tiny Ducks: 1 <div class="progress"><div class="progress-bar" style="width:1%;"></div></div></li>
+            <li>🐥 Colorful Ducks: 8 <div class="progress"><div class="progress-bar" style="width:8%;"></div></div></li>
+            <li>🐥 Big Ducks: 3 <div class="progress"><div class="progress-bar" style="width:3%;"></div></div></li>
+            <li>🐥 Giant Ducks: 0 <div class="progress"><div class="progress-bar" style="width:0%;"></div></div></li>
+
+        </ul>
+    </div>
+    <div class="info-box" id="fun-fact">
+        <h2>Did You Know?</h2>
+        <p id="fact"></p>
     </div>
 
     <script>
-        // This script would typically fetch the data from a server or local file
         document.addEventListener('DOMContentLoaded', function() {
-            const duckData = {
-                "regular": 70,
-                "small": 10,
-                "tiny": 1,
-                "colorful": 8,
-                "big": 3,
-                "giant": 0
-            };
+const funFacts = [
+    "Rubber ducks were first patented in the US in 1928, and have been popular as bath toys ever since!",
+    "The world's largest rubber duck was created by Dutch artist Florentijn Hofman, which measures over 54 feet tall!",
+    "Rubber ducks aren't always rubber; they are often made of vinyl and sometimes even recycled plastic.",
+    "In 2001, The First Years Inc. won the Ig Nobel Prize in Economics for adapting the concept of the 'supply and demand' law to the challenge of marketing the 'rubber duck'.",
+    "The color of the original rubber ducks was a natural rubber color, but today they are typically bright yellow.",
+    "The largest collection of rubber ducks is owned by Charlotte Lee (USA), who has 5,631 different rubber ducks as of April 10, 2011, as verified by Guinness World Records.",
+    "Rubber ducks have been used in large-scale races for charity events around the world, where thousands of rubber ducks are released into rivers and the first to cross the finish line wins.",
+    "The classic yellow rubber duck was popularized by Sesame Street’s character Ernie who sang 'Rubber Duckie, you're the one' in a 1970 episode, making the toy a symbol of bath time fun.",
+    "Some rubber ducks are designed to change color in hot water to ensure that bath water is a safe temperature for young children.",
+    "There's an annual rubber duck day celebrated on January 13th each year to honor the creation of rubber ducks.",
+    "In 2007, nearly 20,000 rubber ducks were released into the ocean in a scientific study to track ocean currents, some of which have traveled halfway around the world.",
+    "Rubber ducks were inducted into the National Toy Hall of Fame in Rochester, New York, in 2013 due to their iconic status and educational value in child development."
+];
 
-            const duckList = document.getElementById('duckList');
-            Object.keys(duckData).forEach(type => {
-                const item = document.createElement('li');
-                item.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Ducks: ${duckData[type]}`;
-                duckList.appendChild(item);
-            });
+            // Select a random fact
+            const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+
+            // Set the text of the paragraph with id 'fact'
+            document.getElementById('fact').textContent = randomFact;
         });
     </script>
 </body>

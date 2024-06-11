@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 20px;
     overflow: hidden;
-    position: relative;
     height: 100vh;
+    position: relative;
 }
 
 body::before {
@@ -18,13 +18,18 @@ body::before {
     background-image: url('background.webp'); /* Ensure the path is correct */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Prevents the background from repeating */
-    filter: blur(4px); /* Apply a blur effect to make the image slightly less noticeable */
-    opacity: 0.3; /* Makes the background image more transparent */
+    background-repeat: no-repeat;
+    filter: blur(4px); /* Apply a blur effect */
+    opacity: 0.3; /* Adjust for desired translucency */
     z-index: -1; /* Keeps the background behind the content */
 }
 
-#dashboard {
+#main-title h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info-box {
     margin: auto;
     width: 80%;
     max-width: 600px;
@@ -34,10 +39,11 @@ body::before {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     position: relative;
-    z-index: 1; /* Ensures the dashboard is on top of the blurred background */
+    z-index: 1; /* Ensures the content is on top of the blurred background */
+    margin-bottom: 20px; /* Space between the boxes */
 }
 
-#dashboard h1 {
+.info-box h2 {
     text-align: center;
     color: #333;
 }
@@ -59,5 +65,20 @@ body::before {
 
 #duckList li:first-letter {
     text-transform: uppercase;
+}
+
+.progress {
+    height: 10px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    transition: width 0.4s ease;
 }
 
