@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubber Duck Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Rubber Duck Dashboard</h1>
+        <ul id="duckList"></ul>
+    </div>
+
+    <script>
+        // This script would typically fetch the data from a server or local file
+        document.addEventListener('DOMContentLoaded', function() {
+            const duckData = {
+                "regular": 70,
+                "small": 10,
+                "tiny": 1,
+                "colorful": 8,
+                "big": 3,
+                "giant": 0
+            };
+
+            const duckList = document.getElementById('duckList');
+            Object.keys(duckData).forEach(type => {
+                const item = document.createElement('li');
+                item.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Ducks: ${duckData[type]}`;
+                duckList.appendChild(item);
+            });
+        });
+    </script>
+</body>
+</html>
+

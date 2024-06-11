@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('background.webp'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    filter: blur(4px); /* Apply a blur effect to make the image slightly less noticeable */
+    opacity: 0.3; /* Makes the background image more transparent */
+    z-index: -1; /* Keeps the background behind the content */
+}
+
+#dashboard {
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1; /* Ensures the dashboard is on top of the blurred background */
+}
+
+#dashboard h1 {
+    text-align: center;
+    color: #333;
+}
+
+#duckList {
+    list-style: none;
+    padding: 0;
+}
+
+#duckList li {
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#duckList li:last-child {
+    border-bottom: none;
+}
+
+#duckList li:first-letter {
+    text-transform: uppercase;
+}
+
